@@ -39,6 +39,6 @@ public class AdminPage {
 	private WebElement createTrack;
 	
 	public void clickCreateTrack() {
-		createTrack.click();
+		createTrack.click();	
 	}
 }
