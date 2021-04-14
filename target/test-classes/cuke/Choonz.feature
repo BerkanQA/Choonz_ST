@@ -31,8 +31,8 @@ And I am signed in as a User
 When I access Playlists page
 And I click Edit Playlist button
 When I click on Update button
-Then I access Home page
-And Updated Playlist is displayed 
+And I access Home page
+Then Updated Playlist is displayed 
 #CHOON-7 
 Scenario: Delete Playlist as a User
 Given I can access Choonz
@@ -40,8 +40,8 @@ And I am signed in as a User
 When I access Playlists page
 And I click Delete Playlist button
 When I click on Delete button
-Then I access Home page
-And Playlist is removed 
+And I access Home page
+Then Playlist is removed 
 #CHOON-8
 Scenario: Navigates to Albums page
 Given I can access Choonz
