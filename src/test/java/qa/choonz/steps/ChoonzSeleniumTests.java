@@ -89,11 +89,11 @@ public class ChoonzSeleniumTests {
         //Sets up the true or flase
         if (success) {
         	//Sets the extent test as a pass!
-            test.log(LogStatus.PASS, "Success, deleteTaskTest");
+            test.log(LogStatus.PASS, "Success, Accessed Choonz site");
         } else {
         	//Sets the extent test as a fail and takes a screenshot to the given path
         	ScreenShot.snapShot(driver, "src/test/resources/reports/Example.png");
-            test.log(LogStatus.FAIL, test.addScreenCapture("src/test/resources/reports/deleteTaskTest.png") + "Test Failed, deleteTaskTest");
+            test.log(LogStatus.FAIL, test.addScreenCapture("src/test/resources/reports/deleteTaskTest.png") + "Test Failed, No access Choonz site");
         }
        
         //Sets the junit test to pass or fail depending on success!
