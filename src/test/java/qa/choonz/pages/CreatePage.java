@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class CreatePage {
 	
-	public static final String AlbumsURL = "http://http://localhost:8082/albums";
+	public static final String CreateURL = "http://http://localhost:8082/create";
 	
 	@FindBy(xpath = "/html/body/section/div/div/div[2]/div/form/button")
 	WebElement createAccount;

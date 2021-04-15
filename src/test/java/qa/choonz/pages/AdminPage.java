@@ -57,13 +57,11 @@ public class AdminPage {
 	
 	// CREATE ALBUM BUTTON AND MODEL
 	@FindBy(xpath = "/html/body/section/div/div/div[3]/div[3]/button")
-	private WebElement createAlbum;
+	WebElement createAlbum;
 	@FindBy(id = "create-album-name")
 	WebElement cAlbumName;
-	@FindBy(id = "craete-album-artistid")
+	@FindBy(id = "create-album-artistid")
 	WebElement cArtistName;
-	@FindBy(id = "albumPic")
-	WebElement cAlbumCover;
 	@FindBy(xpath = "/html/body/div[3]/div/div/div[3]/button[1]")
 	WebElement closeCreateAlbum;
 	@FindBy(xpath = "/html/body/div[3]/div/div/div[3]/button[2]")
@@ -72,11 +70,10 @@ public class AdminPage {
 	public void clickCreateAlbum() {
 		createAlbum.click();
 	}
-	public void createAlbum(String albumname, String artistname, String albumcover) {
+	public void createAlbum(String albumname, String artistname) {
 		cAlbumName.sendKeys(albumname);
 		cAlbumName.sendKeys(artistname);
-		cAlbumCover.sendKeys(albumcover);
-		cAlbumCover.submit();
+		cAlbumName.submit();
 	}
 	public void closeCreateAlbumButton() {
 		closeCreateAlbum.click();
@@ -86,7 +83,7 @@ public class AdminPage {
 	}
 	// CREATE TRACK BUTTON AND MODEL 
 	@FindBy(xpath = "/html/body/section/div/div/div[3]/div[4]/button")
-	private WebElement createTrack;
+	WebElement createTrack;
 	@FindBy(id = "create-track-name")
 	WebElement createNewTrack;
 	@FindBy(id = "craete-track-duration")
@@ -105,7 +102,7 @@ public class AdminPage {
 	public void clickCreateTrack() {
 		createTrack.click();	
 	}
-	public void createNewTrack(String trackname, CharSequence[] trackduration, CharSequence[] trackalbum, CharSequence[] trackgenre, String lyrics) {
+	public void createNewTrack(String trackname,String trackduration, String trackalbum, String trackgenre, String lyrics) {
 		createNewTrack.sendKeys(trackname);
 		createNewDuration.sendKeys(trackduration);
 		createNewAlbum.sendKeys(trackalbum);

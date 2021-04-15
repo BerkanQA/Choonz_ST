@@ -93,14 +93,10 @@ public class ChoonzSeleniumTests {
 	*/
     
     @Given("^I can access Choonz$")
-    public void i_can_access_Choonz() throws Throwable {
-    	
-		//Gets the info from the IndexPage
-		IndexPage indexPage = PageFactory.initElements(driver, IndexPage.class);
-		
+    public void i_can_access_Choonz() throws Throwable {		
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         //Driver.get goes to the index page via the given URL
-        driver.get(indexPage.indexURL);
+        driver.get(IndexPage.indexURL);
 
         // Checks if "Welcome to Choonz!" is anywhere on the page
         boolean success = driver.getPageSource().contains("Welcome to Choonz!") == true;
@@ -122,120 +118,215 @@ public class ChoonzSeleniumTests {
     @When("^I access Login page$")
     public void i_access_Login_page() throws Throwable {	
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-        driver.get(IndexPage.indexURL);
-
-        boolean success = driver.getPageSource().contains("Welcome to Choonz!") == true;
-
+        driver.get(LoginPage.LoginURL);
+        boolean success = driver.getPageSource().contains("Choonz Music Login") == true;
         if (success) {
             test.log(LogStatus.PASS, "Success, Accessed login page");
         } else {
         	ScreenShot.snapShot(driver, "src/test/resources/reports/AccessLogin.png");
             test.log(LogStatus.FAIL, "Failed, Access to login page");
         }
-       
         assertTrue(success);
     }
 
     @When("^I access the Create page$")
     public void i_access_the_Create_page() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(CreatePage.CreateURL);
+
+        boolean success = driver.getPageSource().contains("Choonz Music Create Account") == true;
+
+        if (success) {
+            test.log(LogStatus.PASS, "Success, Accessed create account page");
+        } else {
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/AccessCreate.png");
+            test.log(LogStatus.FAIL, "Failed, Access to create account page");
+        }
+       
+        assertTrue(success);
     }
 
     @Then("^Enter create accounts details$")
     public void enter_create_accounts_details() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    	CreatePage createPage = PageFactory.initElements(driver, CreatePage.class);
+    	
+    	createPage.createUser("selenium", "selenium");
+    	createPage.clickCreateAccount();
     }
 
     @When("^Enter login account details$")
     public void enter_login_account_details() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    	LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
+    	
+    	loginPage.loginForm("selenium", "selenium");
+    	loginPage.clickSubmit();
     }
 
     @Then("^I am signed in$")
     public void i_am_signed_in() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(IndexPage.indexURL);
+        		
+    	boolean success = driver.getPageSource().contains("Selenium") == true;
+    	
+        if (success) {
+            test.log(LogStatus.PASS, "Success, Logged in as admin");
+        } else {
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/LoggedIn.png");
+            test.log(LogStatus.FAIL, "Failed, Cant log in as admin");
+        }
+  
+        assertTrue(success);
     }
 
     @When("^I access Albums page$")
     public void i_access_Albums_page() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(AlbumsPage.AlbumsURL);
     }
 
     @Then("^Album Page will be displayed$")
     public void album_Page_will_be_displayed() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        boolean success = driver.getPageSource().contains("Choonz Albums") == true;
+
+        if (success) {
+            test.log(LogStatus.PASS, "Success, Accessed albums page");
+        } else {
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/AccessAlbum.png");
+            test.log(LogStatus.FAIL, "Failed, Access to album page");
+        }
+  
+        assertTrue(success);
     }
 
     @When("^I access Tracks page$")
     public void i_access_Tracks_page() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(TracksPage.TracksURL);
     }
 
     @Then("^Tracks Page will be displayed$")
     public void tracks_Page_will_be_displayed() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        boolean success = driver.getPageSource().contains("Choonz Tracks") == true;
+
+        if (success) {
+            test.log(LogStatus.PASS, "Success, Accessed tracks page");
+        } else {
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/AccessTracks.png");
+            test.log(LogStatus.FAIL, "Failed, Access to tracks page");
+        }
+  
+        assertTrue(success);
     }
 
     @When("^I access Artists page$")
     public void i_access_Artists_page() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(ArtistsPage.ArtistsURL);
     }
 
     @Then("^Artists Page will be displayed$")
     public void artists_Page_will_be_displayed() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        boolean success = driver.getPageSource().contains("Choonz Artist") == true;
+
+        if (success) {
+            test.log(LogStatus.PASS, "Success, Accessed artists page");
+        } else {
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/AccessArtist.png");
+            test.log(LogStatus.FAIL, "Failed, Access to artists page");
+        }
+  
+        assertTrue(success);
     }
 
     @Given("^I am signed in as an Admin$")
     public void i_am_signed_in_as_an_Admin() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    	boolean success = driver.getPageSource().contains("Selenium") == true;
+    	
+        if (success) {
+            test.log(LogStatus.PASS, "Success, Logged in as admin");
+        } else {
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/LoggedIn.png");
+            test.log(LogStatus.FAIL, "Failed, Cant log in as admin");
+        }
+  
+        assertTrue(success);
     }
 
     @When("^I access Admin page$")
     public void i_access_Admin_page() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(AdminPage.AdminURL);
+        
+        boolean success = driver.getPageSource().contains("Choonz Admin") == true;
+
+        if (success) {
+            test.log(LogStatus.PASS, "Success, Accessed Admin page");
+        } else {
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/AccessAdmin.png");
+            test.log(LogStatus.FAIL, "Failed, Access to admin page");
+        }
+  
+        assertTrue(success);
     }
 
     @Then("^I create a new Artist$")
     public void i_create_a_new_Artist() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+		AdminPage adminPage = PageFactory.initElements(driver, AdminPage.class);
+		
+		adminPage.clickCreateArtists();
+		adminPage.createArtist("Original Selenium Artist");
+		adminPage.clickCreateArtist();
     }
 
     @Then("^Artist information will be displayed$")
     public void artist_information_will_be_displayed() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    	 boolean success = driver.getPageSource().contains("Original Selenium Artist") == true;
+
+         if (success) {
+             test.log(LogStatus.PASS, "Success, Created artist displays on the artist page");
+         } else {
+         	ScreenShot.snapShot(driver, "src/test/resources/reports/CreatedArtist.png");
+             test.log(LogStatus.FAIL, "Failed, Created artist does not display on the artist page");
+         }
+   
+         assertTrue(success);
+    	
     }
 
     @Then("^I create a new Album$")
     public void i_create_a_new_Album() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+		AdminPage adminPage = PageFactory.initElements(driver, AdminPage.class);
+		
+		adminPage.clickCreateAlbum();
+		
+		Select playlistDropdownPicture = new Select(driver.findElement(By.id("albumPic")));
+		playlistDropdownPicture.selectByIndex(1);
+		adminPage.createAlbum("Original Selenium Album", "Original Selenium Album Description");
+		adminPage.createNewAlbum();
     }
 
     @Then("^Album information will be displayed$")
     public void album_information_will_be_displayed() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+   	 boolean success = driver.getPageSource().contains("Original Selenium Album") == true;
+
+     if (success) {
+         test.log(LogStatus.PASS, "Success, Created album displays on the page");
+     } else {
+     	ScreenShot.snapShot(driver, "src/test/resources/reports/CreatedAlbum.png");
+         test.log(LogStatus.FAIL, "Failed, Created album does not display on the page");
+     }
+
+     assertTrue(success);
     }
 
     @Then("^I create a new Track$")
     public void i_create_a_new_Track() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+		AdminPage adminPage = PageFactory.initElements(driver, AdminPage.class);
+		
+		adminPage.clickCreateTrack();
+		adminPage.createNewTrack("Original Selenium Track", "60", "1", "1", "Original. Selenium. Lyrics.");
+		adminPage.clickCreateNewTrackModel();
     }
 
     @Then("^Tracks information will be displayed$")
@@ -315,6 +406,5 @@ public class ChoonzSeleniumTests {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }
-
     
 }
