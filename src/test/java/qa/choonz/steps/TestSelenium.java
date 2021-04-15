@@ -80,7 +80,7 @@ public class TestSelenium {
         driver.get(indexPage.indexURL);
 
         // Checks if "Welcome to Choonz!" is anywhere on the page
-        boolean success = driver.getPageSource().contains("Welcome to Choonz!") == true;
+        boolean success = driver.getPageSource().contains("dsadsad") == true;
 
         //Sets up the true or flase
         if (success) {
