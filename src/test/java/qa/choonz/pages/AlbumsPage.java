@@ -7,6 +7,8 @@ public class AlbumsPage {
 	
 public static final String AlbumsURL = "http://http://localhost:8082/albums";
 	
+	@FindBy
+
 	// EDIT ALBUM button
 	@FindBy(xpath = "/html/body/section/div/div/div[3]/div[1]/button")
 	private WebElement editAlbum;
@@ -53,15 +55,15 @@ public static final String AlbumsURL = "http://http://localhost:8082/albums";
 	@FindBy(id = "update-album-artistid")
 	private WebElement artistID;
 	
-	public void artistIdinput(int artistid) {
-		artistID.sendKeys("1");
+	public void artistIdinput(CharSequence[] artistid) {
+		artistID.sendKeys(artistid);
 		artistID.submit();	
 	}
 	@FindBy(id = "albumPic")
 	private WebElement albumPic;
 	
 	public void albumCoverinput(String albumcover) {
-		albumPic.sendKeys("Banana");
+		albumPic.sendKeys(albumcover);
 		albumPic.submit();
 	}
 }
