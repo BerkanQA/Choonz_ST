@@ -1,0 +1,1714 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "comments": [
+          {
+            "line": 2,
+            "value": "#CHOON-2"
+          }
+        ],
+        "line": 3,
+        "name": "Navigates to Albums page",
+        "description": "",
+        "id": "selenium-test;navigates-to-albums-page",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 255383000,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:4)\r\n",
+              "status": "failed"
+            },
+            "line": 4,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 5,
+            "name": "I access Albums page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Albums_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 6,
+            "name": "Album Page will be displayed",
+            "match": {
+              "location": "ChoonzSeleniumTests.album_Page_will_be_displayed()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 7,
+            "value": "#CHOON-3"
+          }
+        ],
+        "line": 8,
+        "name": "Creates a new Playlist",
+        "description": "",
+        "id": "selenium-test;creates-a-new-playlist",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 318000,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:9)\r\n",
+              "status": "failed"
+            },
+            "line": 9,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 10,
+            "name": "I am signed in as a user",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_am_signed_in_as_a_user()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 11,
+            "name": "I access Playlist page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Playlist_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 12,
+            "name": "I create a new playlist",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_create_a_new_playlist()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "Playlist information is displayed on the screen",
+            "match": {
+              "location": "ChoonzSeleniumTests.playlist_information_is_displayed_on_the_screen()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 14,
+            "value": "#CHOON-4"
+          }
+        ],
+        "line": 15,
+        "name": "Sign up",
+        "description": "",
+        "id": "selenium-test;sign-up",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 307200,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:16)\r\n",
+              "status": "failed"
+            },
+            "line": 16,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "I access Login page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Login_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 18,
+            "name": "I click the link to signup",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_click_the_link_to_signup()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 19,
+            "name": "I enter valid signup credentials",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_enter_valid_signup_credentials()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 20,
+            "name": "I click the Submit button",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_click_the_Submit_button()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 21,
+            "value": "#CHOON-5"
+          }
+        ],
+        "line": 22,
+        "name": "Read Playlist as a User",
+        "description": "",
+        "id": "selenium-test;read-playlist-as-a-user",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 291900,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:23)\r\n",
+              "status": "failed"
+            },
+            "line": 23,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 24,
+            "name": "I am signed in as a User",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_am_signed_in_as_a_User()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 25,
+            "name": "I access Home page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Home_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 26,
+            "name": "Playlist information displayed on the screen",
+            "match": {
+              "location": "ChoonzSeleniumTests.playlist_information_displayed_on_the_screen()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 27,
+            "value": "#CHOON-6"
+          }
+        ],
+        "line": 28,
+        "name": "Update Playlist as a User",
+        "description": "",
+        "id": "selenium-test;update-playlist-as-a-user",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 297800,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:29)\r\n",
+              "status": "failed"
+            },
+            "line": 29,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 30,
+            "name": "I am signed in as a User",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_am_signed_in_as_a_User()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 31,
+            "name": "I access Playlists page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Playlists_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 32,
+            "name": "I click Edit Playlist button",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_click_Edit_Playlist_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 33,
+            "name": "I click on Update button",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_click_on_Update_button()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 34,
+            "name": "I access Home page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Home_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 35,
+            "name": "Updated Playlist is displayed",
+            "match": {
+              "location": "ChoonzSeleniumTests.updated_Playlist_is_displayed()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 36,
+            "value": "#CHOON-7"
+          }
+        ],
+        "line": 37,
+        "name": "Delete Playlist as a User",
+        "description": "",
+        "id": "selenium-test;delete-playlist-as-a-user",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 381500,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:38)\r\n",
+              "status": "failed"
+            },
+            "line": 38,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 39,
+            "name": "I am signed in as a User",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_am_signed_in_as_a_User()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 40,
+            "name": "I access Playlists page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Playlists_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 41,
+            "name": "I click Delete Playlist button",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_click_Delete_Playlist_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 42,
+            "name": "I click on Delete button",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_click_on_Delete_button()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 43,
+            "name": "I access Home page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Home_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 44,
+            "name": "Playlist is removed",
+            "match": {
+              "location": "ChoonzSeleniumTests.playlist_is_removed()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 45,
+            "value": "#CHOON-8"
+          }
+        ],
+        "line": 46,
+        "name": "Navigates to Albums page",
+        "description": "",
+        "id": "selenium-test;navigates-to-albums-page",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 357400,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:47)\r\n",
+              "status": "failed"
+            },
+            "line": 47,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 48,
+            "name": "I am signed in as an Admin",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_am_signed_in_as_an_Admin()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 49,
+            "name": "I access Albums page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Albums_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 50,
+            "name": "Tracks will be displayed",
+            "match": {
+              "location": "ChoonzSeleniumTests.tracks_will_be_displayed()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 51,
+            "value": "#CHOON-9"
+          }
+        ],
+        "line": 52,
+        "name": "Navigation between pages",
+        "description": "",
+        "id": "selenium-test;navigation-between-pages",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 328100,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:53)\r\n",
+              "status": "failed"
+            },
+            "line": 53,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 54,
+            "name": "I am signed as an Admin",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_am_signed_as_an_Admin()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 55,
+            "name": "I access Album Page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Album_Page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 56,
+            "name": "I click on Artist Name",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_click_on_Artist_Name()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 57,
+            "name": "Artist Page is displayed",
+            "match": {
+              "location": "ChoonzSeleniumTests.artist_Page_is_displayed()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 58,
+            "value": "#CHOON-10"
+          }
+        ],
+        "line": 59,
+        "name": "Navigate from Artist page to Albums page",
+        "description": "",
+        "id": "selenium-test;navigate-from-artist-page-to-albums-page",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 349600,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:60)\r\n",
+              "status": "failed"
+            },
+            "line": 60,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 61,
+            "name": "I am signed as an Admin",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_am_signed_as_an_Admin()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 62,
+            "name": "I access Artist page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Artist_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 63,
+            "name": "I can access back to Album page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_back_to_Album_page()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 64,
+            "value": "#CHOON-11"
+          }
+        ],
+        "line": 65,
+        "name": "Navigate as a Guest",
+        "description": "",
+        "id": "selenium-test;navigate-as-a-guest",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 441700,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:66)\r\n",
+              "status": "failed"
+            },
+            "line": 66,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 67,
+            "name": "I access Home page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Home_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 68,
+            "name": "I click on search",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_click_on_search()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 69,
+            "name": "Results should be displayed",
+            "match": {
+              "location": "ChoonzSeleniumTests.results_should_be_displayed()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 70,
+            "value": "#CHOON-12"
+          }
+        ],
+        "line": 71,
+        "name": "Search function",
+        "description": "",
+        "id": "selenium-test;search-function",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 318000,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:72)\r\n",
+              "status": "failed"
+            },
+            "line": 72,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 73,
+            "name": "I access Home page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Home_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 74,
+            "name": "I enter values in searchbar",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_enter_values_in_searchbar()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 75,
+            "name": "I click the search button",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_click_the_search_button()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 76,
+            "name": "values are returned",
+            "match": {
+              "location": "ChoonzSeleniumTests.values_are_returned()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 77,
+            "value": "#CHOON-13"
+          }
+        ],
+        "line": 78,
+        "name": "Navigates to Tracks page",
+        "description": "",
+        "id": "selenium-test;navigates-to-tracks-page",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 303900,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:79)\r\n",
+              "status": "failed"
+            },
+            "line": 79,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 80,
+            "name": "I am signed as an Admin",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_am_signed_as_an_Admin()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 81,
+            "name": "I access Tracks page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Tracks_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 82,
+            "name": "Tracks Page will be displayed",
+            "match": {
+              "location": "ChoonzSeleniumTests.tracks_Page_will_be_displayed()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 83,
+            "value": "#CHOON-25"
+          }
+        ],
+        "line": 84,
+        "name": "Creates a new Track",
+        "description": "",
+        "id": "selenium-test;creates-a-new-track",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 282400,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:85)\r\n",
+              "status": "failed"
+            },
+            "line": 85,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 86,
+            "name": "I am signed in as an Admin",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_am_signed_in_as_an_Admin()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 87,
+            "name": "I access Tracks page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Tracks_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 88,
+            "name": "I create a new Track",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_create_a_new_Track()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 89,
+            "name": "Tracks information is displayed on the screen",
+            "match": {
+              "location": "ChoonzSeleniumTests.tracks_information_is_displayed_on_the_screen()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 92,
+            "value": "#CHOON-27"
+          }
+        ],
+        "line": 93,
+        "name": "Updates a Track",
+        "description": "",
+        "id": "selenium-test;updates-a-track",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 326100,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:94)\r\n",
+              "status": "failed"
+            },
+            "line": 94,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 95,
+            "name": "I am signed in as an Admin",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_am_signed_in_as_an_Admin()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 96,
+            "name": "I access Tracks page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Tracks_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 97,
+            "name": "I update a  Track",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_update_a_Track()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 98,
+            "name": "Tracks information is displayed on the screen",
+            "match": {
+              "location": "ChoonzSeleniumTests.tracks_information_is_displayed_on_the_screen()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 100,
+            "value": "#CHOON-28"
+          }
+        ],
+        "line": 101,
+        "name": "Deletes a Track",
+        "description": "",
+        "id": "selenium-test;deletes-a-track",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 296000,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:102)\r\n",
+              "status": "failed"
+            },
+            "line": 102,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 103,
+            "name": "I am signed in as an Admin",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_am_signed_in_as_an_Admin()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 104,
+            "name": "I access Tracks page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Tracks_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 105,
+            "name": "I delete a  Track",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_delete_a_Track()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 106,
+            "name": "Tracks information is removed",
+            "match": {
+              "location": "ChoonzSeleniumTests.tracks_information_is_removed()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 108,
+            "value": "#CHOON-29"
+          }
+        ],
+        "line": 109,
+        "name": "Creates a new Artist",
+        "description": "",
+        "id": "selenium-test;creates-a-new-artist",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1842100,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:110)\r\n",
+              "status": "failed"
+            },
+            "line": 110,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 111,
+            "name": "I am signed in as an Admin",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_am_signed_in_as_an_Admin()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 112,
+            "name": "I access Artist page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Artist_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 113,
+            "name": "I create a new Artist",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_create_a_new_Artist()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 114,
+            "name": "Artist information is displayed on the screen",
+            "match": {
+              "location": "ChoonzSeleniumTests.artist_information_is_displayed_on_the_screen()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 116,
+            "value": "#CHOON-31"
+          }
+        ],
+        "line": 117,
+        "name": "Updates an Artist",
+        "description": "",
+        "id": "selenium-test;updates-an-artist",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 343100,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:118)\r\n",
+              "status": "failed"
+            },
+            "line": 118,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 119,
+            "name": "I am signed in as an Admin",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_am_signed_in_as_an_Admin()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 120,
+            "name": "I access Artist page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Artist_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 121,
+            "name": "I update the Artist",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_update_the_Artist()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 122,
+            "name": "Artist information is displayed on the screen",
+            "match": {
+              "location": "ChoonzSeleniumTests.artist_information_is_displayed_on_the_screen()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 124,
+            "value": "#CHOON-32"
+          }
+        ],
+        "line": 125,
+        "name": "Deletes an Artist",
+        "description": "",
+        "id": "selenium-test;deletes-an-artist",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 281800,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:126)\r\n",
+              "status": "failed"
+            },
+            "line": 126,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 127,
+            "name": "I am signed in as an Admin",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_am_signed_in_as_an_Admin()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 128,
+            "name": "I access Artist page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Artist_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 129,
+            "name": "I delete the Artist",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_delete_the_Artist()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 130,
+            "name": "Artist information is removed from the screen",
+            "match": {
+              "location": "ChoonzSeleniumTests.artist_information_is_removed_from_the_screen()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 132,
+            "value": "#CHOON-35"
+          }
+        ],
+        "line": 133,
+        "name": "Update an Album",
+        "description": "",
+        "id": "selenium-test;update-an-album",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 343000,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:134)\r\n",
+              "status": "failed"
+            },
+            "line": 134,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 135,
+            "name": "I am signed in as an Admin",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_am_signed_in_as_an_Admin()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 136,
+            "name": "I access Album page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Album_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 137,
+            "name": "I update the Album",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_update_the_Album()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 138,
+            "name": "Album information is displayed on the screen",
+            "match": {
+              "location": "ChoonzSeleniumTests.album_information_is_displayed_on_the_screen()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 140,
+            "value": "#CHOON-36"
+          }
+        ],
+        "line": 141,
+        "name": "Delete an Album",
+        "description": "",
+        "id": "selenium-test;delete-an-album",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 402100,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:142)\r\n",
+              "status": "failed"
+            },
+            "line": 142,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 143,
+            "name": "I am signed in as an Admin",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_am_signed_in_as_an_Admin()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 144,
+            "name": "I access Album page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Album_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 145,
+            "name": "I delete the Album",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_delete_the_Album()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 146,
+            "name": "Album information is removed",
+            "match": {
+              "location": "ChoonzSeleniumTests.album_information_is_removed()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 148,
+            "value": "#CHOON-35"
+          }
+        ],
+        "line": 149,
+        "name": "Update an Genres",
+        "description": "",
+        "id": "selenium-test;update-an-genres",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 301600,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:150)\r\n",
+              "status": "failed"
+            },
+            "line": 150,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 151,
+            "name": "I am signed in as an Admin",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_am_signed_in_as_an_Admin()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 152,
+            "name": "I access Genres page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Genres_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 153,
+            "name": "I update the Genres",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_update_the_Genres()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 154,
+            "name": "Genres information is displayed on the screen",
+            "match": {
+              "location": "ChoonzSeleniumTests.genres_information_is_displayed_on_the_screen()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 156,
+            "value": "#CHOON-36"
+          }
+        ],
+        "line": 157,
+        "name": "Delete an Album",
+        "description": "",
+        "id": "selenium-test;delete-an-album",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 412900,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:158)\r\n",
+              "status": "failed"
+            },
+            "line": 158,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 159,
+            "name": "I am signed in as an Admin",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_am_signed_in_as_an_Admin()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 160,
+            "name": "I access Album page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Album_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 161,
+            "name": "I delete the Album",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_delete_the_Album()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 162,
+            "name": "Album information is removed",
+            "match": {
+              "location": "ChoonzSeleniumTests.album_information_is_removed()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "line": 163,
+        "name": "Navigates to Artists page",
+        "description": "",
+        "id": "selenium-test;navigates-to-artists-page",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 469200,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:164)\r\n",
+              "status": "failed"
+            },
+            "line": 164,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 165,
+            "name": "I access Artists page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Artists_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 166,
+            "name": "Artists Page will be displayed",
+            "match": {
+              "location": "ChoonzSeleniumTests.artists_Page_will_be_displayed()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 168,
+            "value": "#CHOON-42"
+          }
+        ],
+        "line": 169,
+        "name": "",
+        "description": "",
+        "id": "selenium-test;",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 390600,
+              "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.remote.RemoteWebDriver.manage()\" because \"qa.choonz.steps.ChoonzSeleniumTests.driver\" is null\r\n\tat qa.choonz.steps.ChoonzSeleniumTests.i_can_access_Choonz(ChoonzSeleniumTests.java:82)\r\n\tat ✽.Given I can access Choonz(Choonz.feature:170)\r\n",
+              "status": "failed"
+            },
+            "line": 170,
+            "name": "I can access Choonz",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_can_access_Choonz()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 171,
+            "name": "I access Admin page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_Admin_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 172,
+            "name": "I create the track",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_create_the_track()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 173,
+            "name": "I access track page",
+            "match": {
+              "location": "ChoonzSeleniumTests.i_access_track_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 174,
+            "name": "Track page will be displayed",
+            "match": {
+              "location": "ChoonzSeleniumTests.track_page_will_be_displayed()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 175,
+            "name": "Track information is displayed on screen",
+            "match": {
+              "location": "ChoonzSeleniumTests.track_information_is_displayed_on_screen()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Selenium Test",
+    "description": "",
+    "id": "selenium-test",
+    "keyword": "Feature",
+    "uri": "Choonz.feature"
+  }
+]

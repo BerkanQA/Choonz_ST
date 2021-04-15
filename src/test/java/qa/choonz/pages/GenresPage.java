@@ -41,4 +41,19 @@ public class GenresPage {
 	public void clickUpdateGenres() {
 		updateGenres.click();
 	}
+	@FindBy(id = "update-genre-name")
+	private WebElement genreNameUpdate;
+	
+	public void genreNameInput(String genrename) {
+		genreNameUpdate.sendKeys(genrename);
+		genreNameUpdate.submit();
+	}
+	
+	@FindBy(id = "genreName")
+	private WebElement genreNames;
+	
+	public void clickGenreNames() {
+		genreNames.click();
+	}
+	
 }
