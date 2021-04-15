@@ -7,63 +7,96 @@ public class AlbumsPage {
 	
 public static final String AlbumsURL = "http://http://localhost:8082/albums";
 	
-	@FindBy
-
-	// EDIT ALBUM button
 	@FindBy(xpath = "/html/body/section/div/div/div[3]/div[1]/button")
-	private WebElement editAlbum;
+	WebElement addArtist;
+	@FindBy(xpath = "/html/body/div[4]/div/div/div[3]/button[1]")
+	WebElement closeAddArtist; 
+	@FindBy(xpath = "/html/body/div[4]/div/div/div[3]/button[2]")
+	WebElement addArtistButton;
+	@FindBy(id = "add-album-artist")
+	WebElement artistId;
+
+	
+	public void clickAddArtist() {
+		addArtist.click();
+	}
+	public void clickCloseAddArtistModel() {
+		closeAddArtist.click();
+	}
+	public void clickAddArtistModel() {
+		addArtistButton.click();
+	}
+	public void artistIDinput(String artistid) {
+		artistId.sendKeys(artistid);
+		artistId.submit();
+	}
+
+	@FindBy(xpath = "/html/body/section/div/div/div[3]/div[2]/button")
+	WebElement removeArtistButton;
+	@FindBy(xpath = "/html/body/div[5]/div/div/div[3]/button[1]")
+	WebElement closeRemoveArtistModel;
+	@FindBy(xpath = "/html/body/div[5]/div/div/div[3]/button[2]")
+	WebElement removeArtistModelButton;
+	@FindBy(id = "remove-album-artist")
+	WebElement removeArtistId;
+	
+	public void clickRemoveArtist() {
+		removeArtistButton.click();
+	}
+	public void closeRemoveArtistModel() {
+		closeRemoveArtistModel.click();
+	}
+	public void removeArtistModelButton() {
+		removeArtistModelButton.click();
+	}
+	public void removeArtistModel(String artistid) {
+		removeArtistId.sendKeys(artistid);
+		removeArtistId.submit();
+	}
+
+	@FindBy(xpath = "/html/body/section/div/div/div[3]/div[3]/button")
+	WebElement editAlbum;
+	@FindBy(xpath = "/html/body/div[6]/div/div/div[3]/button[1]")
+	WebElement closeUpdateAlbumModel;
+	@FindBy(xpath = "/html/body/div[6]/div/div/div[3]/button[2]")
+	WebElement updateButtonModel;
+	@FindBy(id = "update-album-name")
+	WebElement updateAlbumName;
+	@FindBy(id = "update-album-artistid")
+	WebElement updateArtistId;
+	@FindBy(id = "albumPic")
+	WebElement updateAlbumCover;
 	
 	public void clickEditAlbum() {
-	editAlbum.click();
+		editAlbum.click();
 	}
-	// delete album button
-	@FindBy(xpath = "/html/body/section/div/div/div[3]/div[2]/button")
-	private WebElement deleteAlbum;
+	public void clickCloseUpdateAlbumModel() {
+		closeUpdateAlbumModel.click();
+	}
+	public void clickUpdateModel() {
+		updateButtonModel.click();
+	}
+	public void updateModel(String albumname, String artistid, String albumcover) {
+		updateAlbumName.sendKeys(albumname);
+		updateArtistId.sendKeys(artistid);
+		updateAlbumCover.sendKeys(albumcover);
+		updateAlbumCover.submit();
+	}
+	
+	@FindBy(xpath = "/html/body/section/div/div/div[3]/div[4]/button")
+	WebElement deleteAlbumButton;
+	@FindBy(xpath = "/html/body/div[7]/div/div/div[3]/button[1]")
+	WebElement closeDeleteButton;
+	@FindBy(xpath = "/html/body/div[7]/div/div/div[3]/button[2]")
+	WebElement confirmDeleteButton;
 	
 	public void clickDeleteAlbum() {
-		deleteAlbum.click();
+		deleteAlbumButton.click();
 	}
-	
-	@FindBy(xpath = "/html/body/div[4]/div/div/div[3]/button[1]")
-	private WebElement closeUpdateAlbum;
-	
-	public void clickCloseUpdateAlbum() {
-		closeUpdateAlbum.click();
+	public void clickCloseDeleteAlbum() {
+		closeDeleteButton.click();
 	}
-	
-	@FindBy(xpath = "/html/body/div[4]/div/div/div[3]/button[2]") 
-		private WebElement updateAlbum;
-	
-	public void clickUpdate() {
-		updateAlbum.click();
-	}
-
-	@FindBy(xpath = "/html/body/section/div/div/div[2]/div/div[2]/a")
-	private WebElement artistPage; 
-	
-	public void clickArtistlink() {
-		artistPage.click();
-	}
-	
-	@FindBy(id = "update-album-name")
-	private WebElement aName;
-	
-	public void albumInput(String albumname) {
-		aName.sendKeys("album1");
-		aName.submit();
-	}
-	@FindBy(id = "update-album-artistid")
-	private WebElement artistID;
-	
-	public void artistIdinput(CharSequence[] artistid) {
-		artistID.sendKeys(artistid);
-		artistID.submit();	
-	}
-	@FindBy(id = "albumPic")
-	private WebElement albumPic;
-	
-	public void albumCoverinput(String albumcover) {
-		albumPic.sendKeys(albumcover);
-		albumPic.submit();
+	public void clickConfirmDelete() {
+		confirmDeleteButton.click();
 	}
 }
