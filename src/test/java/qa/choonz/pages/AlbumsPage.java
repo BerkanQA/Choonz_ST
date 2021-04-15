@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class AlbumsPage {
 	
-public static final String AlbumsURL = "http://http://localhost:8082/albums";
+public static final String AlbumsURL = "http://http://localhost:8082/albums?album_id=1";
 	
 	@FindBy(xpath = "/html/body/section/div/div/div[3]/div[1]/button")
 	WebElement addArtist;
@@ -76,10 +76,9 @@ public static final String AlbumsURL = "http://http://localhost:8082/albums";
 	public void clickUpdateModel() {
 		updateButtonModel.click();
 	}
-	public void updateModel(String albumname, String artistid, String albumcover) {
+	public void updateModel(String albumname, String artistid) {
 		updateAlbumName.sendKeys(albumname);
 		updateArtistId.sendKeys(artistid);
-		updateAlbumCover.sendKeys(albumcover);
 		updateAlbumCover.submit();
 	}
 	

@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class TracksPage {
-	public static final String TracksURL = "http://http://localhost:8082/tracks";
+	public static final String TracksURL = "http://http://localhost:8082/tracks?track_id=1";
 
 	// Album-name link
 	@FindBy(xpath = "/html/body/section/div/div/div[1]/div[4]/a")
@@ -28,6 +28,13 @@ public class TracksPage {
 
 	public void clickEditTrack() {
 		updateTrack.click();
+	}
+	
+	@FindBy(xpath = "/html/body/div[3]/div/div/div[3]/button[2]")
+	private WebElement editTrackModal;
+	
+	public void clickEditTrackModal() {
+		editTrackModal.click();
 	}
 	
 	@FindBy(xpath = "/html/body/section/div/div/div[3]/div[2]/button")
@@ -54,6 +61,9 @@ public class TracksPage {
 	@FindBy(id = "update-track-name")
 	private WebElement updateTName;
 	
+	@FindBy(id = "update-track-duration")
+	private WebElement updateTDuration;
+	
 	@FindBy(id = "update-album-id")
 	private WebElement updateAlbumId;
 	
@@ -63,8 +73,9 @@ public class TracksPage {
 	@FindBy(id = "lyricsTextBox")
 	private WebElement lyrics;
 	
-	public void updateTracks(String trackname, CharSequence[] albumid, CharSequence[] genreid, String ulyrics) {
+	public void updateTracks(String trackname, String duration, String albumid, String genreid, String ulyrics) {
 		updateTName.sendKeys(trackname);
+		updateTDuration.sendKeys(duration);
 		updateAlbumId.sendKeys(albumid);
 		updateGenreId.sendKeys(genreid);
 		lyrics.sendKeys(ulyrics);

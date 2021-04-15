@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class ArtistsPage {
-	public static final String ArtistsURL = "http://http://localhost:8082/artists";
+	public static final String ArtistsURL = "http://http://localhost:8082/artists?artist_id=1";
 	
 	
 	@FindBy(id = "artistName")
@@ -28,6 +28,13 @@ public class ArtistsPage {
 	
 	public void clickDeleteArtists() {
 		deleteArtist.click();
+	}
+	
+	@FindBy(xpath = "/html/body/div[6]/div/div/div[3]/button[2]")
+	private WebElement deleteArtistModal;
+	
+	public void clickDeleteArtistsModal() {
+		deleteArtistModal.click();
 	}
 	
 	@FindBy(xpath = "/html/body/div[5]/div/div/div[3]/button[1]")

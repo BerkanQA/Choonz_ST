@@ -58,6 +58,13 @@ Then I create a new Album
 When I access Albums page 
 Then Album information will be displayed
 
+Scenario: Creates a new Track
+Given I can access Choonz
+And I am signed in as an Admin 
+When I access Admin page
+Then I create a new Genre
+When I access Genre page 
+Then Genre information will be displayed
 
 #CHOON-25
 Scenario: Creates a new Track

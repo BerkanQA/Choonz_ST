@@ -302,7 +302,7 @@ public class ChoonzSeleniumTests {
 		
 		Select playlistDropdownPicture = new Select(driver.findElement(By.id("albumPic")));
 		playlistDropdownPicture.selectByIndex(1);
-		adminPage.createAlbum("Original Selenium Album", "Original Selenium Album Description");
+		adminPage.createAlbum("Original Selenium Album", "1");
 		adminPage.createNewAlbum();
     }
 
@@ -331,78 +331,176 @@ public class ChoonzSeleniumTests {
 
     @Then("^Tracks information will be displayed$")
     public void tracks_information_will_be_displayed() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+      	 boolean success = driver.getPageSource().contains("Original Selenium Track") == true;
+
+         if (success) {
+             test.log(LogStatus.PASS, "Success, Created track displays on the page");
+         } else {
+         	ScreenShot.snapShot(driver, "src/test/resources/reports/CreatedTrack.png");
+             test.log(LogStatus.FAIL, "Failed, Created track does not display on the page");
+         }
+
+         assertTrue(success);
     }
 
     @Then("^I update a Track$")
     public void i_update_a_Track() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+		TracksPage tracksPage = PageFactory.initElements(driver, TracksPage.class);
+		
+		tracksPage.clickEditTrack();
+		tracksPage.updateTracks("Updated Selenium Track", "30", "1", "1", "Updated. Selenium, Lyrics.");
+		tracksPage.clickEditTrackModal();
+		
     }
 
     @Then("^Updated Tracks information will be displayed$")
     public void updated_Tracks_information_will_be_displayed() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+     	 boolean success = driver.getPageSource().contains("Updated Selenium Track") == true;
+
+         if (success) {
+             test.log(LogStatus.PASS, "Success, Updated track displays on the page");
+         } else {
+         	ScreenShot.snapShot(driver, "src/test/resources/reports/UpdatedTrack.png");
+             test.log(LogStatus.FAIL, "Failed, Updated track does not display on the page");
+         }
+
+         assertTrue(success);
     }
 
     @Then("^I update the Album$")
     public void i_update_the_Album() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+		AlbumsPage albumsPage = PageFactory.initElements(driver, AlbumsPage.class);
+		
+		albumsPage.clickEditAlbum();
+		Select playlistDropdownPicture = new Select(driver.findElement(By.id("albumPic")));
+		playlistDropdownPicture.selectByIndex(1);
+		albumsPage.updateModel("Updated Selenium Album", "1");
+		albumsPage.clickUpdateModel();
     }
 
     @Then("^Updated Album information will be displayed$")
     public void updated_Album_information_will_be_displayed() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    	 boolean success = driver.getPageSource().contains("Updated Selenium Album") == true;
+
+         if (success) {
+             test.log(LogStatus.PASS, "Success, Updated album displays on the page");
+         } else {
+         	ScreenShot.snapShot(driver, "src/test/resources/reports/UpdatedAlbum.png");
+             test.log(LogStatus.FAIL, "Failed, Updated album does not display on the page");
+         }
+
+         assertTrue(success);
     }
 
     @Then("^I update the Artist$")
     public void i_update_the_Artist() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+		ArtistsPage artistPage = PageFactory.initElements(driver, ArtistsPage.class);
+		
+		artistPage.clickEditArtists();
+		artistPage.artistNameInput("Updated Selenium Artist");
+		artistPage.clickUpdateArtist();
     }
 
     @Then("^Updated Artist information will be displayed$")
     public void updated_Artist_information_will_be_displayed() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+   	 boolean success = driver.getPageSource().contains("Updated Selenium Artist") == true;
+
+     if (success) {
+         test.log(LogStatus.PASS, "Success, Updated artist displays on the page");
+     } else {
+     	ScreenShot.snapShot(driver, "src/test/resources/reports/UpdatedArtist.png");
+         test.log(LogStatus.FAIL, "Failed, Updated artist does not display on the page");
+     }
+
+     assertTrue(success);
     }
 
     @Then("^I delete a Track$")
     public void i_delete_a_Track() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    	TracksPage tracksPage = PageFactory.initElements(driver, TracksPage.class);
+    	tracksPage.clickDeleteTrack();
+    	tracksPage.clickdDeleteTrack();
     }
 
     @Then("^Tracks information is removed$")
     public void tracks_information_is_removed() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    	
+    	 driver.get(TracksPage.TracksURL);
+      	 boolean deleted = !(driver.getPageSource().contains("Updated Selenium Artist") == true);
+      	 
+
+         if (deleted) {
+             test.log(LogStatus.PASS, "Success, artist deleted");
+         } else {
+         	ScreenShot.snapShot(driver, "src/test/resources/reports/DeletedArtist.png");
+             test.log(LogStatus.FAIL, "Failed, artist not deleted");
+         }
+
+         assertTrue(deleted);
     }
 
     @Then("^I delete the Album$")
     public void i_delete_the_Album() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    	AlbumsPage albumsPage = PageFactory.initElements(driver, AlbumsPage.class);
+    	
+    	albumsPage.clickDeleteAlbum();
+    	albumsPage.clickConfirmDelete();
     }
 
     @Then("^Album information is removed$")
     public void album_information_is_removed() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+   	 	driver.get(AlbumsPage.AlbumsURL);
+   	 	boolean deleted = !(driver.getPageSource().contains("Updated Selenium Album") == true);
+  	 
+
+   	 	if (deleted) {
+   	 		test.log(LogStatus.PASS, "Success, album deleted");
+   	 	} else {
+   	 		ScreenShot.snapShot(driver, "src/test/resources/reports/DeletedAlbum.png");
+   	 		test.log(LogStatus.FAIL, "Failed, album not deleted");
+   	 	}
+
+   	 	assertTrue(deleted);
     }
 
     @Then("^I delete the Artist$")
     public void i_delete_the_Artist() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    	ArtistsPage artistPage = PageFactory.initElements(driver, ArtistsPage.class);
+    	
+    	artistPage.clickDeleteArtists();
+    	artistPage.clickDeleteArtistsModal();
     }
 
     @Then("^Artist information is removed$")
     public void artist_information_is_removed() throws Throwable {
+   	 	driver.get(ArtistsPage.ArtistsURL);
+   	 	boolean deleted = !(driver.getPageSource().contains("Updated Selenium Artist") == true);
+  	 
+
+   	 	if (deleted) {
+   	 		test.log(LogStatus.PASS, "Success, artist deleted");
+   	 	} else {
+   	 		ScreenShot.snapShot(driver, "src/test/resources/reports/DeletedArtist.png");
+   	 		test.log(LogStatus.FAIL, "Failed, artist not deleted");
+   	 	}
+
+   	 	assertTrue(deleted);
+    }
+    
+    @Then("^I create a new Genre$")
+    public void i_create_a_new_Genre() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @When("^I access Genre page$")
+    public void i_access_Genre_page() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Then("^Genre information will be displayed$")
+    public void genre_information_will_be_displayed() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }

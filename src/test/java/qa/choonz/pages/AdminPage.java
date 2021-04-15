@@ -61,7 +61,7 @@ public class AdminPage {
 	@FindBy(id = "create-album-name")
 	WebElement cAlbumName;
 	@FindBy(id = "create-album-artistid")
-	WebElement cArtistName;
+	WebElement cArtistId;
 	@FindBy(xpath = "/html/body/div[3]/div/div/div[3]/button[1]")
 	WebElement closeCreateAlbum;
 	@FindBy(xpath = "/html/body/div[3]/div/div/div[3]/button[2]")
