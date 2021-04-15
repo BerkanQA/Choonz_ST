@@ -124,7 +124,7 @@ public class ChoonzSeleniumTests {
     @When("^I access the Create page$")
     public void i_access_the_Create_page() throws Throwable {
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-        driver.get(CreatePage.CreateURL);
+        //driver.get(CreatePage.CreateURL);
 
         boolean success = driver.getPageSource().contains("Choonz Music Create Account") == true;
 
