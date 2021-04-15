@@ -9,9 +9,18 @@ public class LoginPage {
 	
 	@FindBy(xpath = "/html/body/div[2]/form/div[1]/div/a") 
 	private WebElement signUpHere;
+	@FindBy(id = "username")
+	WebElement uName;
+	@FindBy(id = "password")
+	WebElement pWord;
 	
 	public void clickSignUpHere() {
 		signUpHere.click();
+	}
+	public void loginForm(String username, String password) {
+		uName.sendKeys(username);
+		pWord.sendKeys(password);
+		pWord.submit();
 	}
 	
 	@FindBy(xpath = "/html/body/div[2]/form/button")

@@ -43,4 +43,12 @@ public class ArtistsPage {
 	public void clickUpdateArtist() {
 		updateArtist.click();
 	}
+	
+	@FindBy(id = "update-artist-name")
+	private WebElement updateArtistName;
+	
+	public void artistNameInput(String artistname) {
+		updateArtistName.sendKeys(artistname);
+		updateArtist.submit();
+	}
 }

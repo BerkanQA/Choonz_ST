@@ -23,14 +23,11 @@ public class TracksPage {
 	}
 	
 	// Edit Track
-	
 	@FindBy(xpath = "/html/body/section/div/div/div[3]/div[1]/button")
-	private WebElement editTrack;
+	private WebElement updateTrack;
 
-	
-	
 	public void clickEditTrack() {
-		editTrack.click();
+		updateTrack.click();
 	}
 	
 	@FindBy(xpath = "/html/body/section/div/div/div[3]/div[2]/button")
@@ -53,4 +50,26 @@ public class TracksPage {
 	public void clickdDeleteTrack() {
 		dDeleteTrack.click();
 	}
+	
+	@FindBy(id = "update-track-name")
+	private WebElement updateTName;
+	
+	@FindBy(id = "update-album-id")
+	private WebElement updateAlbumId;
+	
+	@FindBy(id = "update-genre-id")
+	private WebElement updateGenreId;
+	
+	@FindBy(id = "lyricsTextBox")
+	private WebElement lyrics;
+	
+	public void updateTracks(String trackname, CharSequence[] albumid, CharSequence[] genreid, String ulyrics) {
+		updateTName.sendKeys(trackname);
+		updateAlbumId.sendKeys(albumid);
+		updateGenreId.sendKeys(genreid);
+		lyrics.sendKeys(ulyrics);
+	}
+	
 }
+	
+
