@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class AlbumsPage {
 	
-public static final String AlbumsURL = "http://http://localhost:8082/albums?album_id=1";
+public static final String AlbumsURL = "http://localhost:8082/albums?album_id=1";
 	
 	@FindBy(xpath = "/html/body/section/div/div/div[3]/div[1]/button")
 	WebElement addArtist;

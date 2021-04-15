@@ -25,6 +25,14 @@ public class AdminPage {
 	public void clickCreateGenres() {
 		createGenres.click();
 	}
+	
+	@FindBy(xpath = "/html/body/div[5]/div/div/div[3]/button[2]")
+	private WebElement createGenresModal;
+	
+	public void clickCreateGenresModal() {
+		createGenresModal.click();
+	}
+	
 	public void createGenre(String genrename, String genredesc) {
 		genreName.sendKeys(genrename);
 		genreDesc.sendKeys(genredesc);

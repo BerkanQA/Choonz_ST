@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class GenresPage {
 
-	public static final String GenresURL = "http://localhost:8082/genres";
+	public static final String GenresURL = "http://localhost:8082/genres?genre_id=1";
 	
 	@FindBy(id = "genreName")
 	private WebElement uGenreName;

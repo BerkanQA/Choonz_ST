@@ -58,7 +58,7 @@ Then I create a new Album
 When I access Albums page 
 Then Album information will be displayed
 
-Scenario: Creates a new Track
+Scenario: Creates a new Genre
 Given I can access Choonz
 And I am signed in as an Admin 
 When I access Admin page

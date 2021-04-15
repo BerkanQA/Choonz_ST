@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class TracksPage {
-	public static final String TracksURL = "http://http://localhost:8082/tracks?track_id=1";
+	public static final String TracksURL = "http://localhost:8082/tracks?track_id=1";
 
 	// Album-name link
 	@FindBy(xpath = "/html/body/section/div/div/div[1]/div[4]/a")

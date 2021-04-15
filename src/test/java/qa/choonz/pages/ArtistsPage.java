@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class ArtistsPage {
-	public static final String ArtistsURL = "http://http://localhost:8082/artists?artist_id=1";
+	public static final String ArtistsURL = "http://localhost:8082/artists?artist_id=1";
 	
 	
 	@FindBy(id = "artistName")

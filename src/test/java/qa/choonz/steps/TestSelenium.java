@@ -18,7 +18,9 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
+import cucumber.api.java.en.Given;
 import qa.choonz.pages.IndexPage;
 import qa.choonz.utils.ScreenShot;
 
@@ -29,8 +31,9 @@ public class TestSelenium {
     private static RemoteWebDriver driver;
 	static ExtentReports extent;
 	static ExtentTest test;
+
 	
-	@BeforeClass
+	@Before
     public static void init() {
     	
 		extent = new ExtentReports("src/test/resources/reports/report1.html", true);
@@ -59,7 +62,7 @@ public class TestSelenium {
     }
     */
     
-    @AfterClass
+	@After
     public static void finalTearDown() {
 		LOGGER.warning("Closing webdriver instance!");
 		driver.quit();
@@ -67,6 +70,32 @@ public class TestSelenium {
 		extent.endTest(test);
 		extent.flush();
 		extent.close();
+    }
+    
+    @Given("^Test Case$")
+    public void test_Case() throws Throwable {
+		//Gets the info from the IndexPage
+		IndexPage indexPage = PageFactory.initElements(driver, IndexPage.class);
+		
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        //Driver.get goes to the index page via the given URL
+        driver.get(indexPage.indexURL);
+
+        // Checks if "Welcome to Choonz!" is anywhere on the page
+        boolean success = driver.getPageSource().contains("dsadsad") == true;
+
+        //Sets up the true or flase
+        if (success) {
+        	//Sets the extent test as a pass!
+            test.log(LogStatus.PASS, "Success, deleteTaskTest");
+        } else {
+        	//Sets the extent test as a fail and takes a screenshot to the given path
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/Example.png");
+            test.log(LogStatus.FAIL, test.addScreenCapture("src/test/resources/reports/deleteTaskTest.png") + "Test Failed, deleteTaskTest");
+        }
+       
+        //Sets the junit test to pass or fail depending on success!
+        assertTrue(success);
     }
 	
 	@Test

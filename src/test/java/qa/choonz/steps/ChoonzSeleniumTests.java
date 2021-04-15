@@ -5,10 +5,6 @@ import static org.junit.Assert.assertTrue;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.TimeoutException;
@@ -23,6 +19,8 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import cucumber.api.PendingException;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -36,10 +34,10 @@ public class ChoonzSeleniumTests {
 	static ExtentReports extent;
 	static ExtentTest test;
 	
-	@BeforeClass
+	@Before
     public static void init() {
     	
-		extent = new ExtentReports("src/test/resources/reports/report1.html", true);
+		extent = new ExtentReports("src/test/resources/reports/ChoonExtentSeleniumReport.html", true);
 		test = extent.startTest("Choonz Selenium Tests");
 		System.setProperty("webdriver.chrome.driver",
 				"src/test/resources/chromedriver.exe");
@@ -65,7 +63,7 @@ public class ChoonzSeleniumTests {
     }
     */
     
-    @AfterClass
+	@After
     public static void finalTearDown() {
 		LOGGER.warning("Closing webdriver instance!");
 		driver.quit();
@@ -241,6 +239,12 @@ public class ChoonzSeleniumTests {
 
     @Given("^I am signed in as an Admin$")
     public void i_am_signed_in_as_an_Admin() throws Throwable {
+    	LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
+    	
+    	loginPage.loginForm("selenium", "selenium");
+    	loginPage.clickSubmit();
+    	
+    	driver.get(IndexPage.indexURL);
     	boolean success = driver.getPageSource().contains("Selenium") == true;
     	
         if (success) {
@@ -489,20 +493,32 @@ public class ChoonzSeleniumTests {
     
     @Then("^I create a new Genre$")
     public void i_create_a_new_Genre() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    	AdminPage adminPage = PageFactory.initElements(driver, AdminPage.class);
+    	
+    	adminPage.clickCreateGenres();
+    	adminPage.createGenre("Original Selenium Genre", "Original Selenium Genre Description");
+    	adminPage.clickCreateGenresModal();
+    	
     }
 
     @When("^I access Genre page$")
     public void i_access_Genre_page() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(GenresPage.GenresURL);
     }
 
     @Then("^Genre information will be displayed$")
     public void genre_information_will_be_displayed() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+   	 boolean success = driver.getPageSource().contains("Original Selenium Genre") == true;
+
+     if (success) {
+         test.log(LogStatus.PASS, "Success, Created Genre displays on the page");
+     } else {
+     	ScreenShot.snapShot(driver, "src/test/resources/reports/CreatedGenre.png");
+         test.log(LogStatus.FAIL, "Failed, Created artist does not display on the genre page");
+     }
+
+     assertTrue(success);
     }
     
 }

@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class BasicsOnEveryPage {
-	public static final String BasicsURL = "http://http://localhost:8082";
+	public static final String BasicsURL = "http://localhost:8082";
 	
 	@FindBy(id = "Search")
 	private WebElement bSearch; 
