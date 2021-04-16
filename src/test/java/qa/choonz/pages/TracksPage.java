@@ -23,21 +23,21 @@ public class TracksPage {
 	}
 	
 	// Edit Track
-	@FindBy(xpath = "/html/body/section/div/div/div[3]/div[1]/button")
+	@FindBy(id = "editTrackButton")
 	private WebElement updateTrack;
 
 	public void clickEditTrack() {
 		updateTrack.click();
 	}
 	
-	@FindBy(xpath = "/html/body/div[3]/div/div/div[3]/button[2]")
+	@FindBy(id = "updateTrackModalButton")
 	private WebElement editTrackModal;
 	
 	public void clickEditTrackModal() {
 		editTrackModal.click();
 	}
 	
-	@FindBy(xpath = "/html/body/section/div/div/div[3]/div[2]/button")
+	@FindBy(id = "deleteTrackButton")
 	private WebElement deleteTrack;
 	
 	public void clickDeleteTrack() {
@@ -51,7 +51,7 @@ public class TracksPage {
 		closeDeleteTrack.click();
 	}
 	
-	@FindBy(xpath = "/html/body/div[4]/div/div/div[3]/button[2]")
+	@FindBy(id = "deleteTrackModalButton")
 	private WebElement dDeleteTrack;
 	
 	public void clickdDeleteTrack() {

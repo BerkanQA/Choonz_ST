@@ -7,7 +7,7 @@ public class CreatePage {
 	
 	public static final String CreateURL = "http://localhost:8082/create";
 	
-	@FindBy(xpath = "/html/body/section/div/div/div[2]/div/form/button")
+	@FindBy(id = "createAccountButton")
 	WebElement createAccount;
 	@FindBy(id = "Username")
 	WebElement uName;

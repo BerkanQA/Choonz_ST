@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class AdminPage {
 
-	public static final String AdminURL = "http://http://localhost:8082/admin";
+	public static final String AdminURL = "http://localhost:8082/admin";
 	
 	// 
 	@FindBy(id = "playlistName") 
@@ -15,7 +15,7 @@ public class AdminPage {
 		playlistName.click();
 	}
 	// CREATE GENRE BUTTON AND MODEL
-	@FindBy(xpath = "/html/body/section/div/div/div[3]/div[1]/button")
+	@FindBy(id = "createGenreButton")
 	private WebElement createGenres; 
 	@FindBy(id = "create-genre-name")
 	WebElement genreName;
@@ -26,7 +26,7 @@ public class AdminPage {
 		createGenres.click();
 	}
 	
-	@FindBy(xpath = "/html/body/div[5]/div/div/div[3]/button[2]")
+	@FindBy(id = "createGenreModalButton")
 	private WebElement createGenresModal;
 	
 	public void clickCreateGenresModal() {
@@ -40,13 +40,13 @@ public class AdminPage {
 	}
 	
 	// CREATE ARTIST BUTTON AND MODEL 
-	@FindBy(xpath = "/html/body/section/div/div/div[3]/div[2]/button")
+	@FindBy(id = "createArtistButton")
 	private WebElement createArtists;
 	@FindBy(id = "create-artist-name")
 	WebElement artistName;
 	@FindBy(xpath = "/html/body/div[4]/div/div/div[3]/button[1]")
 	WebElement closeCreateArtist;
-	@FindBy(xpath = "/html/body/div[4]/div/div/div[3]/button[2]")
+	@FindBy(id = "createArtistModalButton")
 	WebElement cCreateArtist;
 	
 	public void clickCreateArtists() {
@@ -64,23 +64,20 @@ public class AdminPage {
 	}
 	
 	// CREATE ALBUM BUTTON AND MODEL
-	@FindBy(xpath = "/html/body/section/div/div/div[3]/div[3]/button")
+	@FindBy(id = "createAlbumButton")
 	WebElement createAlbum;
 	@FindBy(id = "create-album-name")
 	WebElement cAlbumName;
-	@FindBy(id = "create-album-artistid")
-	WebElement cArtistId;
 	@FindBy(xpath = "/html/body/div[3]/div/div/div[3]/button[1]")
 	WebElement closeCreateAlbum;
-	@FindBy(xpath = "/html/body/div[3]/div/div/div[3]/button[2]")
+	@FindBy(id = "createAlbumModalButton")
 	WebElement createNewAlbum; 
 	
 	public void clickCreateAlbum() {
 		createAlbum.click();
 	}
-	public void createAlbum(String albumname, String artistname) {
+	public void createAlbum(String albumname) {
 		cAlbumName.sendKeys(albumname);
-		cAlbumName.sendKeys(artistname);
 		cAlbumName.submit();
 	}
 	public void closeCreateAlbumButton() {
@@ -90,11 +87,12 @@ public class AdminPage {
 		createNewAlbum.click();
 	}
 	// CREATE TRACK BUTTON AND MODEL 
-	@FindBy(xpath = "/html/body/section/div/div/div[3]/div[4]/button")
+	@FindBy(id = "createTrackButton")
 	WebElement createTrack;
+	
 	@FindBy(id = "create-track-name")
 	WebElement createNewTrack;
-	@FindBy(id = "craete-track-duration")
+	@FindBy(id = "create-track-duration")
 	WebElement createNewDuration;
 	@FindBy(id = "create-album-id")
 	WebElement createNewAlbumid;
@@ -104,7 +102,7 @@ public class AdminPage {
 	WebElement createLyrics;
 	@FindBy(xpath = "/html/body/div[2]/div/div/div[3]/button[1]")
 	WebElement closeCreateTrackModel;
-	@FindBy(xpath = "/html/body/div[2]/div/div/div[3]/button[2]")
+	@FindBy(id = "createTrackModalButton")
 	WebElement createNewTrackModel;
 	
 	public void clickCreateTrack() {

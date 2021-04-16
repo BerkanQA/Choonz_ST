@@ -23,7 +23,7 @@ public class LoginPage {
 		pWord.submit();
 	}
 	
-	@FindBy(xpath = "/html/body/section/div/div/div[2]/div/form/button")
+	@FindBy(id = "loginAccountButton")
 	private WebElement uSubmit;
 	
 	public void clickSubmit() {

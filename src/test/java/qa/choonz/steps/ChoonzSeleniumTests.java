@@ -306,7 +306,7 @@ public class ChoonzSeleniumTests {
 		
 		Select playlistDropdownPicture = new Select(driver.findElement(By.id("albumPic")));
 		playlistDropdownPicture.selectByIndex(1);
-		adminPage.createAlbum("Original Selenium Album", "1");
+		adminPage.createAlbum("Original Selenium Album");
 		adminPage.createNewAlbum();
     }
 
@@ -378,7 +378,7 @@ public class ChoonzSeleniumTests {
 		albumsPage.clickEditAlbum();
 		Select playlistDropdownPicture = new Select(driver.findElement(By.id("albumPic")));
 		playlistDropdownPicture.selectByIndex(1);
-		albumsPage.updateModel("Updated Selenium Album", "1");
+		albumsPage.updateModel("Updated Selenium Album");
 		albumsPage.clickUpdateModel();
     }
 

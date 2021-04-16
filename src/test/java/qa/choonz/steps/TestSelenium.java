@@ -2,26 +2,29 @@ package qa.choonz.steps;
 
 import static org.junit.Assert.assertTrue;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
-import qa.choonz.pages.IndexPage;
+import qa.choonz.pages.*;
 import qa.choonz.utils.ScreenShot;
 
 public class TestSelenium {
@@ -33,7 +36,7 @@ public class TestSelenium {
 	static ExtentTest test;
 
 	
-	@Before
+	@BeforeClass
     public static void init() {
     	
 		extent = new ExtentReports("src/test/resources/reports/report1.html", true);
@@ -62,7 +65,7 @@ public class TestSelenium {
     }
     */
     
-	@After
+	@AfterClass
     public static void finalTearDown() {
 		LOGGER.warning("Closing webdriver instance!");
 		driver.quit();
@@ -109,7 +112,7 @@ public class TestSelenium {
         driver.get(indexPage.indexURL);
 
         // Checks if "Welcome to Choonz!" is anywhere on the page
-        boolean success = driver.getPageSource().contains("dsadsad") == true;
+        boolean success = driver.getPageSource().contains("Choon") == true;
 
         //Sets up the true or flase
         if (success) {
@@ -123,6 +126,135 @@ public class TestSelenium {
        
         //Sets the junit test to pass or fail depending on success!
         assertTrue(success);
+	}
+	
+	@Test
+	public void CreateTrackTest() throws Exception {
+		
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(AdminPage.AdminURL);
+        
+		AdminPage adminPage = PageFactory.initElements(driver, AdminPage.class);
+		
+		adminPage.clickCreateTrack();
+		
+        new WebDriverWait(driver, 10)
+        .until(ExpectedConditions.elementToBeClickable(By.id("lyricsTextBox")));
+		
+		adminPage.createNewTrack("Original Selenium Track", "60", "1", "1", "Original. Selenium. Lyrics.");
+		adminPage.clickCreateNewTrackModel();
+		
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(TracksPage.TracksURL);
+        
+     	boolean success = driver.getPageSource().contains("Original Selenium Track") == true;
+
+        if (success) {
+            test.log(LogStatus.PASS, "Success, Created track displays on the page");
+        } else {
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/CreatedTrack.png");
+            test.log(LogStatus.FAIL, "Failed, Created track does not display on the page");
+        }
+
+        assertTrue(success);
+	}
+	
+	@Test
+	public void CreateGenreTest() throws Exception {
+		
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(AdminPage.AdminURL);
+        
+    	AdminPage adminPage = PageFactory.initElements(driver, AdminPage.class);
+    	
+    	adminPage.clickCreateGenres();
+    	
+        new WebDriverWait(driver, 10)
+        .until(ExpectedConditions.elementToBeClickable(By.id("create-genre-name")));
+    	
+    	adminPage.createGenre("Original Selenium Genre", "Original Selenium Genre Description");
+    	adminPage.clickCreateGenresModal();
+    	
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(GenresPage.GenresURL);
+        
+      	boolean success = driver.getPageSource().contains("Original Selenium Genre") == true;
+
+        if (success) {
+            test.log(LogStatus.PASS, "Success, Created Genre displays on the page");
+        } else {
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/CreatedGenre.png");
+            test.log(LogStatus.FAIL, "Failed, Created artist does not display on the genre page");
+        }
+
+        assertTrue(success);
+        
+        
+	}
+	
+	@Test
+	public void CreateArtistTest() throws Exception {
+		
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(AdminPage.AdminURL);
+        
+		AdminPage adminPage = PageFactory.initElements(driver, AdminPage.class);
+		
+		adminPage.clickCreateArtists();
+		
+        new WebDriverWait(driver, 10)
+        .until(ExpectedConditions.elementToBeClickable(By.id("create-artist-name")));
+		
+		adminPage.createArtist("Original Selenium Artist");
+		adminPage.clickCreateArtist();
+		
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(ArtistsPage.ArtistsURL);
+		
+   	 	boolean success = driver.getPageSource().contains("Original Selenium Artist") == true;
+
+   	 	if (success) {
+   	 		test.log(LogStatus.PASS, "Success, Created artist displays on the artist page");
+   	 	} else {
+   	 		ScreenShot.snapShot(driver, "src/test/resources/reports/CreatedArtist.png");
+   	 		test.log(LogStatus.FAIL, "Failed, Created artist does not display on the artist page");
+   	 	}
+
+   	 	assertTrue(success);
+            
+	}
+	
+	@Test
+	public void CreateAlbumTest() throws Exception {
+		
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(AdminPage.AdminURL);
+        
+    	AdminPage adminPage = PageFactory.initElements(driver, AdminPage.class);
+    	
+    	adminPage.clickCreateGenres();
+    	
+        new WebDriverWait(driver, 10)
+        .until(ExpectedConditions.elementToBeClickable(By.id("create-album-name")));
+    	
+    	adminPage.createGenre("Original Selenium Genre", "Original Selenium Genre Description");
+    	adminPage.clickCreateGenresModal();
+    	
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(GenresPage.GenresURL);
+        
+      	boolean success = driver.getPageSource().contains("Original Selenium Genre") == true;
+
+        if (success) {
+            test.log(LogStatus.PASS, "Success, Created Genre displays on the page");
+        } else {
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/CreatedGenre.png");
+            test.log(LogStatus.FAIL, "Failed, Created artist does not display on the genre page");
+        }
+
+        assertTrue(success);
+        
+        
 	}
 
 	

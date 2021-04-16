@@ -15,7 +15,7 @@ public class ArtistsPage {
 	}
 	
 	// Edit Artist button
-	@FindBy(xpath ="/html/body/section/div/div/div[3]/div[1]/button")
+	@FindBy(id ="editArtistButton")
 	private WebElement editArtists;
 	
 	
@@ -23,14 +23,14 @@ public class ArtistsPage {
 		editArtists.click();
 	}
 	
-	@FindBy(xpath = "/html/body/section/div/div/div[3]/div[2]/button")
+	@FindBy(id = "deleteArtistButton")
 	private WebElement deleteArtist;
 	
 	public void clickDeleteArtists() {
 		deleteArtist.click();
 	}
 	
-	@FindBy(xpath = "/html/body/div[6]/div/div/div[3]/button[2]")
+	@FindBy(id = "deleteArtistModalButton")
 	private WebElement deleteArtistModal;
 	
 	public void clickDeleteArtistsModal() {
@@ -44,7 +44,7 @@ public class ArtistsPage {
 		closeUpdateArtist.click();
 	}
 	
-	@FindBy(xpath ="/html/body/div[5]/div/div/div[3]/button[2]")
+	@FindBy(id ="updateArtistModalButton")
 	private WebElement updateArtist;
 	
 	public void clickUpdateArtist() {

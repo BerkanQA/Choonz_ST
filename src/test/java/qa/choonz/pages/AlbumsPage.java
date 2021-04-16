@@ -54,16 +54,14 @@ public static final String AlbumsURL = "http://localhost:8082/albums?album_id=1"
 		removeArtistId.submit();
 	}
 
-	@FindBy(xpath = "/html/body/section/div/div/div[3]/div[3]/button")
+	@FindBy(id = "editAlbumButton")
 	WebElement editAlbum;
 	@FindBy(xpath = "/html/body/div[6]/div/div/div[3]/button[1]")
 	WebElement closeUpdateAlbumModel;
-	@FindBy(xpath = "/html/body/div[6]/div/div/div[3]/button[2]")
+	@FindBy(id = "updateAlbumModalButton")
 	WebElement updateButtonModel;
 	@FindBy(id = "update-album-name")
 	WebElement updateAlbumName;
-	@FindBy(id = "update-album-artistid")
-	WebElement updateArtistId;
 	@FindBy(id = "albumPic")
 	WebElement updateAlbumCover;
 	
@@ -76,17 +74,16 @@ public static final String AlbumsURL = "http://localhost:8082/albums?album_id=1"
 	public void clickUpdateModel() {
 		updateButtonModel.click();
 	}
-	public void updateModel(String albumname, String artistid) {
+	public void updateModel(String albumname) {
 		updateAlbumName.sendKeys(albumname);
-		updateArtistId.sendKeys(artistid);
-		updateAlbumCover.submit();
+		updateAlbumName.submit();
 	}
 	
-	@FindBy(xpath = "/html/body/section/div/div/div[3]/div[4]/button")
+	@FindBy(id = "deleteAlbumButton")
 	WebElement deleteAlbumButton;
 	@FindBy(xpath = "/html/body/div[7]/div/div/div[3]/button[1]")
 	WebElement closeDeleteButton;
-	@FindBy(xpath = "/html/body/div[7]/div/div/div[3]/button[2]")
+	@FindBy(id = "deleteAlbumModalButton")
 	WebElement confirmDeleteButton;
 	
 	public void clickDeleteAlbum() {

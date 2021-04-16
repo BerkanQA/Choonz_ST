@@ -8,13 +8,11 @@ import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -25,6 +23,9 @@ import qa.choonz.pages.AlbumsPage;
 import qa.choonz.pages.ArtistsPage;
 import qa.choonz.pages.CreatePage;
 import qa.choonz.pages.GenresPage;
+import qa.choonz.pages.HotArtistsPage;
+import qa.choonz.pages.HotPlaylistsPage;
+import qa.choonz.pages.HotTracksPage;
 import qa.choonz.pages.IndexPage;
 import qa.choonz.pages.LoginPage;
 import qa.choonz.pages.TracksPage;
@@ -64,6 +65,8 @@ public class ChoonJunitSelenium {
 		extent.close();
     }
 	
+	/*
+	
 	@Test
 	public void crudTest() throws Exception {
 		//SIGNIN
@@ -79,7 +82,7 @@ public class ChoonJunitSelenium {
     	loginPage.clickSubmit();   	
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         driver.get(IndexPage.indexURL);       		
-    	boolean login = driver.getPageSource().contains("Selenium") == true;  	
+    	boolean login = driver.getPageSource().contains("selenium") == true;  	
         if (login) {
             test.log(LogStatus.PASS, "Success, Logged in as admin");
         } else {
@@ -87,7 +90,7 @@ public class ChoonJunitSelenium {
             test.log(LogStatus.FAIL, "Failed, Cant log in as admin");
         }
         assertTrue(login);
-        //System.out.println("LOGIN DONE");
+        //System.out.println("LOGIN DONE");       
         
         //CREATE ARTIST ALBUM TRACK AND GENRE
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
@@ -101,7 +104,7 @@ public class ChoonJunitSelenium {
 		adminPage.clickCreateAlbum();	
 		Select playlistDropdownPicture = new Select(driver.findElement(By.id("albumPic")));
 		playlistDropdownPicture.selectByIndex(1);
-		adminPage.createAlbum("Original Selenium Album", "1");
+		adminPage.createAlbum("Original Selenium Album");
 		adminPage.createNewAlbum();
 		//System.out.println("ALBUM CREATED");
 		
@@ -181,7 +184,7 @@ public class ChoonJunitSelenium {
 		albumsPage.clickEditAlbum();
 		Select albumDropdownPicture = new Select(driver.findElement(By.id("albumPic")));
 		albumDropdownPicture.selectByIndex(1);
-		albumsPage.updateModel("Updated Selenium Album", "1");
+		albumsPage.updateModel("Updated Selenium Album");
 		albumsPage.clickUpdateModel();
    	 	boolean updateAlbum = driver.getPageSource().contains("Updated Selenium Album") == true;
    	 	if (updateAlbum) {
@@ -251,8 +254,11 @@ public class ChoonJunitSelenium {
    	 	}
    	 	assertTrue(deletedArtist);
    	 	//System.out.println("ARTIST DELETE CHECKED");
+   	 	 
+   	 	 
 	}
 	
+	*/
 	/*
 	
 	@Test 
@@ -337,6 +343,142 @@ public class ChoonJunitSelenium {
         } else {
         	ScreenShot.snapShot(driver, "src/test/resources/reports/AccessTracks.png");
             test.log(LogStatus.FAIL, "Failed, Access to tracks page");
+        }
+  
+        assertTrue(success);
+	}
+	
+	@Test
+	public void navigateAdminPageTest() throws Exception{
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(AdminPage.AdminURL);
+        
+        boolean success = driver.getPageSource().contains("Admin") == true;
+
+        if (success) {
+            test.log(LogStatus.PASS, "Success, Accessed admin page");
+        } else {
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/AccessAdmin.png");
+            test.log(LogStatus.FAIL, "Failed, Access to admin page");
+        }
+  
+        assertTrue(success);
+	}
+	
+	@Test
+	public void navigateCreatePageTest() throws Exception{
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(CreatePage.CreateURL);
+        
+        boolean success = driver.getPageSource().contains("Create Account") == true;
+
+        if (success) {
+            test.log(LogStatus.PASS, "Success, Accessed create page");
+        } else {
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/AccessCreate.png");
+            test.log(LogStatus.FAIL, "Failed, Access to create page");
+        }
+  
+        assertTrue(success);
+	}
+	
+	@Test
+	public void navigateGenrePageTest() throws Exception{
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(GenresPage.GenresURL);
+        
+        boolean success = driver.getPageSource().contains("Choonz Genre") == true;
+
+        if (success) {
+            test.log(LogStatus.PASS, "Success, Accessed genre page");
+        } else {
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/AccessGenre.png");
+            test.log(LogStatus.FAIL, "Failed, Access to genre page");
+        }
+  
+        assertTrue(success);
+	}
+	
+	@Test
+	public void navigateHotArtistTest() throws Exception{
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(HotArtistsPage.hotArtistURL);
+        
+        boolean success = driver.getPageSource().contains("Hot Artist") == true;
+
+        if (success) {
+            test.log(LogStatus.PASS, "Success, Accessed hot artist page");
+        } else {
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/AccessHotArtist.png");
+            test.log(LogStatus.FAIL, "Failed, Access to hot artist page");
+        }
+  
+        assertTrue(success);
+	}
+	
+	@Test
+	public void navigateHotPlaylistTest() throws Exception {
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(HotPlaylistsPage.hotPlaylistURL);
+        
+        boolean success = driver.getPageSource().contains("Hot Playlists") == true;
+
+        if (success) {
+            test.log(LogStatus.PASS, "Success, Accessed hot playlists page");
+        } else {
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/AccessHotPlaylists.png");
+            test.log(LogStatus.FAIL, "Failed, Access to hot playlist page");
+        }
+  
+        assertTrue(success);
+	}
+	
+	@Test
+	public void navigateHotTrackTest() throws Exception {
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(HotTracksPage.hotTracksURL);
+        
+        boolean success = driver.getPageSource().contains("Hot Tracks") == true;
+
+        if (success) {
+            test.log(LogStatus.PASS, "Success, Accessed hot tracks page");
+        } else {
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/AccessHotTracks.png");
+            test.log(LogStatus.FAIL, "Failed, Access to hot tracks page");
+        }
+  
+        assertTrue(success);
+	}
+	
+	@Test
+	public void navigateHotLoginTest() throws Exception {
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(LoginPage.LoginURL);
+        
+        boolean success = driver.getPageSource().contains("Login") == true;
+
+        if (success) {
+            test.log(LogStatus.PASS, "Success, Accessed login page");
+        } else {
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/AccessLogin.png");
+            test.log(LogStatus.FAIL, "Failed, Access to login page");
+        }
+  
+        assertTrue(success);
+	}
+	
+	@Test
+	public void navigatePlaylistsTest() throws Exception {
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(LoginPage.LoginURL);
+        
+        boolean success = driver.getPageSource().contains("Playlist") == true;
+
+        if (success) {
+            test.log(LogStatus.PASS, "Success, Accessed playlists page");
+        } else {
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/AccessPlaylists.png");
+            test.log(LogStatus.FAIL, "Failed, Access to playlist page");
         }
   
         assertTrue(success);
