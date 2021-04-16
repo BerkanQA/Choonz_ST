@@ -64,6 +64,197 @@ public class ChoonJunitSelenium {
 		extent.close();
     }
 	
+	@Test
+	public void crudTest() throws Exception {
+		//SIGNIN
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(CreatePage.CreateURL);  
+    	CreatePage createPage = PageFactory.initElements(driver, CreatePage.class);   	
+    	createPage.createUser("selenium", "selenium");
+    	createPage.clickCreateAccount();  	
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(LoginPage.LoginURL);        
+        LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);        
+    	loginPage.loginForm("selenium", "selenium");
+    	loginPage.clickSubmit();   	
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(IndexPage.indexURL);       		
+    	boolean login = driver.getPageSource().contains("Selenium") == true;  	
+        if (login) {
+            test.log(LogStatus.PASS, "Success, Logged in as admin");
+        } else {
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/LoggedIn.png");
+            test.log(LogStatus.FAIL, "Failed, Cant log in as admin");
+        }
+        assertTrue(login);
+        //System.out.println("LOGIN DONE");
+        
+        //CREATE ARTIST ALBUM TRACK AND GENRE
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        driver.get(AdminPage.AdminURL);    
+		AdminPage adminPage = PageFactory.initElements(driver, AdminPage.class);	
+		adminPage.clickCreateArtists();
+		adminPage.createArtist("Original Selenium Artist");
+		adminPage.clickCreateArtist();
+		//System.out.println("ARTIST CREATED");
+		
+		adminPage.clickCreateAlbum();	
+		Select playlistDropdownPicture = new Select(driver.findElement(By.id("albumPic")));
+		playlistDropdownPicture.selectByIndex(1);
+		adminPage.createAlbum("Original Selenium Album", "1");
+		adminPage.createNewAlbum();
+		//System.out.println("ALBUM CREATED");
+		
+    	adminPage.clickCreateGenres();
+    	adminPage.createGenre("Original Selenium Genre", "Original Selenium Genre Description");
+    	adminPage.clickCreateGenresModal();
+    	//System.out.println("GENRE CREATED");
+    	
+		adminPage.clickCreateTrack();
+		adminPage.createNewTrack("Original Selenium Track", "60", "1", "1", "Original. Selenium. Lyrics.");
+		adminPage.clickCreateNewTrackModel();
+		//System.out.println("GENRE CREATED");
+		
+        driver.get(ArtistsPage.ArtistsURL);		
+   	 	boolean createArtist = driver.getPageSource().contains("Original Selenium Artist") == true;
+   	 	if (createArtist) {
+   	 		test.log(LogStatus.PASS, "Success, Created artist displays on the artist page");
+   	 	} else {
+   	 		ScreenShot.snapShot(driver, "src/test/resources/reports/CreatedArtist.png");
+   	 		test.log(LogStatus.FAIL, "Failed, Created artist does not display on the artist page");
+   	 	}
+   	 	assertTrue(createArtist);
+   	 	//System.out.println("ARTIST CREATED CHECKED");
+   	 	
+        driver.get(AlbumsPage.AlbumsURL);   
+        boolean createAlbum = driver.getPageSource().contains("Original Selenium Album") == true;
+        if (createAlbum) {
+            test.log(LogStatus.PASS, "Success, Created album displays on the page");
+        } else {
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/CreatedAlbum.png");
+            test.log(LogStatus.FAIL, "Failed, Created album does not display on the page");
+        }
+        assertTrue(createAlbum);
+        //System.out.println("ALBUM CREATED CHECKED");
+        
+        driver.get(GenresPage.GenresURL);     
+      	boolean createGenre = driver.getPageSource().contains("Original Selenium Genre") == true;
+        if (createGenre) {
+            test.log(LogStatus.PASS, "Success, Created Genre displays on the page");
+        } else {
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/CreatedGenre.png");
+            test.log(LogStatus.FAIL, "Failed, Created artist does not display on the genre page");
+        }
+        assertTrue(createGenre);
+        //System.out.println("GENRE CREATED CHECKED");
+        
+        driver.get(TracksPage.TracksURL);      
+     	boolean createTrack = driver.getPageSource().contains("Original Selenium Track") == true;
+        if (createTrack) {
+            test.log(LogStatus.PASS, "Success, Created track displays on the page");
+        } else {
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/CreatedTrack.png");
+            test.log(LogStatus.FAIL, "Failed, Created track does not display on the page");
+        }
+        assertTrue(createTrack);
+        //System.out.println("TRACK CREATED CHECKED");
+        
+        //UPDATE TRACK ALBUM ARTIST
+        
+        driver.get(TracksPage.TracksURL);	
+		TracksPage tracksPage = PageFactory.initElements(driver, TracksPage.class);	
+		tracksPage.clickEditTrack();
+		tracksPage.updateTracks("Updated Selenium Track", "30", "1", "1", "Updated. Selenium, Lyrics.");
+		tracksPage.clickEditTrackModal();	
+    	boolean updateTrack = driver.getPageSource().contains("Updated Selenium Track") == true;
+        if (updateTrack) {
+            test.log(LogStatus.PASS, "Success, Updated track displays on the page");
+        } else {
+        	ScreenShot.snapShot(driver, "src/test/resources/reports/UpdatedTrack.png");
+            test.log(LogStatus.FAIL, "Failed, Updated track does not display on the page");
+        }
+        assertTrue(updateTrack);
+        //System.out.println("TRACK UPDATE CHECKED");
+        
+        driver.get(AlbumsPage.AlbumsURL);       
+		AlbumsPage albumsPage = PageFactory.initElements(driver, AlbumsPage.class);		
+		albumsPage.clickEditAlbum();
+		Select albumDropdownPicture = new Select(driver.findElement(By.id("albumPic")));
+		albumDropdownPicture.selectByIndex(1);
+		albumsPage.updateModel("Updated Selenium Album", "1");
+		albumsPage.clickUpdateModel();
+   	 	boolean updateAlbum = driver.getPageSource().contains("Updated Selenium Album") == true;
+   	 	if (updateAlbum) {
+   	 		test.log(LogStatus.PASS, "Success, Updated album displays on the page");
+   	 	} else {
+   	 		ScreenShot.snapShot(driver, "src/test/resources/reports/UpdatedAlbum.png");
+   	 		test.log(LogStatus.FAIL, "Failed, Updated album does not display on the page");
+   	 	}
+  	 	assertTrue(updateAlbum);
+  	 	//System.out.println("ALBUM UPDATE CHECKED");
+  	 	
+        driver.get(ArtistsPage.ArtistsURL);		
+		ArtistsPage artistPage = PageFactory.initElements(driver, ArtistsPage.class);		
+		artistPage.clickEditArtists();
+		artistPage.artistNameInput("Updated Selenium Artist");
+		artistPage.clickUpdateArtist();		
+	   	boolean updateArtist = driver.getPageSource().contains("Updated Selenium Artist") == true;
+	    if (updateArtist) {
+	        test.log(LogStatus.PASS, "Success, Updated artist displays on the page");
+	    } else {
+	    	ScreenShot.snapShot(driver, "src/test/resources/reports/UpdatedArtist.png");
+	        test.log(LogStatus.FAIL, "Failed, Updated artist does not display on the page");
+	    }
+	    assertTrue(updateArtist);
+	    //System.out.println("ARTIST UPDATE CHECKED");
+	    
+	    //DELETE TRACK ALBUM ARTIST
+	    
+	   	driver.get(TracksPage.TracksURL);	
+    	tracksPage.clickDeleteTrack();
+    	tracksPage.clickdDeleteTrack();  	
+   	 	driver.get(TracksPage.TracksURL);
+   	 	boolean deletedTrack = !(driver.getPageSource().contains("Updated Selenium Artist") == true);	 
+   	 	if (deletedTrack) {
+   	 		test.log(LogStatus.PASS, "Success, artist deleted");
+   	 	} else {
+   	 		ScreenShot.snapShot(driver, "src/test/resources/reports/DeletedArtist.png");
+   	 		test.log(LogStatus.FAIL, "Failed, artist not deleted");
+   	 	}
+   	 	assertTrue(deletedTrack);
+   	 	//System.out.println("TRACK DELETE CHECKED");
+   	 	
+		driver.get(AlbumsPage.AlbumsURL);		 	
+    	albumsPage.clickDeleteAlbum();
+    	albumsPage.clickConfirmDelete();  	
+   	 	driver.get(AlbumsPage.AlbumsURL);
+   	 	boolean deletedAlbum = !(driver.getPageSource().contains("Updated Selenium Album") == true); 
+   	 	if (deletedAlbum) {
+   	 		test.log(LogStatus.PASS, "Success, album deleted");
+   	 	} else {
+   	 		ScreenShot.snapShot(driver, "src/test/resources/reports/DeletedAlbum.png");
+   	 		test.log(LogStatus.FAIL, "Failed, album not deleted");
+   	 	}
+   	 	assertTrue(deletedAlbum);
+   	 	//System.out.println("ALBUM DELETE CHECKED");
+   	 	
+		driver.get(ArtistsPage.ArtistsURL);			
+    	artistPage.clickDeleteArtists();
+    	artistPage.clickDeleteArtistsModal();    	
+   	 	driver.get(ArtistsPage.ArtistsURL);
+   	 	boolean deletedArtist = !(driver.getPageSource().contains("Updated Selenium Artist") == true); 	 
+   	 	if (deletedArtist) {
+   	 		test.log(LogStatus.PASS, "Success, artist deleted");
+   	 	} else {
+   	 		ScreenShot.snapShot(driver, "src/test/resources/reports/DeletedArtist.png");
+   	 		test.log(LogStatus.FAIL, "Failed, artist not deleted");
+   	 	}
+   	 	assertTrue(deletedArtist);
+   	 	//System.out.println("ARTIST DELETE CHECKED");
+	}
+	
+	/*
+	
 	@Test 
 	public void signUpTest() throws Exception {
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
@@ -98,6 +289,7 @@ public class ChoonJunitSelenium {
 		
 	}
 	
+	*/
 	
 	@Test
 	public void navigateAlbumPageTest() throws Exception {
@@ -149,6 +341,8 @@ public class ChoonJunitSelenium {
   
         assertTrue(success);
 	}
+	
+	/*
 	
 	@Test
 	public void createArtistTest() throws Exception{
@@ -396,4 +590,6 @@ public class ChoonJunitSelenium {
 
    	 	assertTrue(deleted);
 	}
+	
+	*/
 }

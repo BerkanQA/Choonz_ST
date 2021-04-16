@@ -9,7 +9,7 @@ public class LoginPage {
 	
 	@FindBy(xpath = "/html/body/div[2]/form/div[1]/div/a") 
 	private WebElement signUpHere;
-	@FindBy(id = "username")
+	@FindBy(id = "Username")
 	WebElement uName;
 	@FindBy(id = "password")
 	WebElement pWord;
@@ -23,7 +23,7 @@ public class LoginPage {
 		pWord.submit();
 	}
 	
-	@FindBy(xpath = "/html/body/div[2]/form/button")
+	@FindBy(xpath = "/html/body/section/div/div/div[2]/div/form/button")
 	private WebElement uSubmit;
 	
 	public void clickSubmit() {

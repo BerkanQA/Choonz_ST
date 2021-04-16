@@ -9,7 +9,7 @@ public class CreatePage {
 	
 	@FindBy(xpath = "/html/body/section/div/div/div[2]/div/form/button")
 	WebElement createAccount;
-	@FindBy(id = "username")
+	@FindBy(id = "Username")
 	WebElement uName;
 	@FindBy(id = "password")
 	WebElement pWord;
